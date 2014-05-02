@@ -1,0 +1,5 @@
+set term png           
+set output "scalability_test.png" 
+set xlabel "thread count"
+set ylabel "time for 1048576 allocations (ms)"
+plot "scalability_test.dat" u 1:4 title "std::make_unique" with lines, "scalability_test.dat" u 1:3 title "recycle::make_unique" with lines
